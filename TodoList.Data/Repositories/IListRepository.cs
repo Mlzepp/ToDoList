@@ -11,6 +11,5 @@ namespace ToDoList.Data.Repositories
         Task<bool> InsertItem(AList list);
         Task<bool> UpdateItem(AList list);
         Task<bool> DeleteItem(AList list);
-
     }
 }
