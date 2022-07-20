@@ -49,6 +49,7 @@ namespace ToDoList
             services.AddSingleton(DBConnectionConfiguration);
 
             services.AddScoped<IListRepository, ListRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

@@ -1,9 +1,5 @@
 ﻿using Dapper;
 using Npgsql;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using ToDoList.Model;
 
@@ -36,11 +32,18 @@ namespace ToDoList.Data.Repositories
             return result > 0;
         }
 
-        public Task<bool> LoguinUser(User user)
+        public async Task<User> LoguinUser(string username, string password)
         {
-            throw new NotImplementedException();
+            var db = dbConnection();
+
+            var sql = @"
+                        SELECT * FROM users
+                        WHERE username = @Username
+                          AND password = @Password
+                        ";
+
+            return await db.QueryFirstOrDefaultAsync<User>(sql, new { Username = username, Password = password });
+            
         }
-
-
     }
 }

@@ -10,6 +10,6 @@ namespace ToDoList.Model
     {
         public string Username { get; set; }
         public string Password { get; set; }    
-        public string Created { get; set; }
+        public int Created { get; set; }
     }
 }

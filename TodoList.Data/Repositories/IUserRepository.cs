@@ -7,9 +7,9 @@ using ToDoList.Model;
 
 namespace ToDoList.Data.Repositories
 {
-    internal interface IUserRepository
+    public interface IUserRepository
     {
         Task<bool> CreateUser(User user);
-        Task<bool> LoguinUser(User user);
+        Task<User> LoguinUser(string username, string password);
     }
 }

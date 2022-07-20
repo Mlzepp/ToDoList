@@ -26,12 +26,12 @@ namespace ToDoList.Controllers
         [Route("Validate")]
         public IActionResult Validate([FromBody] User request)
         {
-            if (request.username == "matias.losada@live.com" && request.password == "Marley01")
+            if (request.Username == "matias.losada@live.com" && request.Password == "Marley01")
             {
                 var keyBytes = Encoding.ASCII.GetBytes(secreyKey);
                 var claims = new ClaimsIdentity();
 
-                claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, request.username));
+                claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, request.Username));
 
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
