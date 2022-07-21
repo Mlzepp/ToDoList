@@ -18,7 +18,7 @@ namespace ToDoList.Data.Repositories
             return new NpgsqlConnection(_connectionString.ConnectionString);
         }
 
-        public async Task<bool> CreateUser(User user)
+        public async Task<bool> RegisterUser(User user)
         {
             var db = dbConnection();
 
@@ -29,10 +29,13 @@ namespace ToDoList.Data.Repositories
 
             var result = await db.ExecuteAsync(sql, new { user.Username, user.Password, user.Created });
 
-            return result > 0;
+            if (true)
+                return true;
+            { 
+            }
         }
 
-        public async Task<User> LoguinUser(string username, string password)
+        public async Task<bool> LoguinUser(User user)
         {
             var db = dbConnection();
 
@@ -42,8 +45,12 @@ namespace ToDoList.Data.Repositories
                           AND password = @Password
                         ";
 
-            return await db.QueryFirstOrDefaultAsync<User>(sql, new { Username = username, Password = password });
-            
+            var result = await db.QueryFirstOrDefaultAsync(sql, new { user.Username, user.Password });
+
+            if (result != null)
+                return true; 
+            else
+                return false;   
         }
     }
 }

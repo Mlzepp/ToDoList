@@ -38,8 +38,8 @@ namespace ToDoList.Data.Repositories
             var db = dbConnection();
 
             var sql = @"
-                        SELECT id, title, description, duedate, completion_date, status, created_by  
-                        FROM list ";
+                        SELECT id, title, description, duedate, completion_date, status, created_by, user
+                        FROM list";
 
             return await db.QueryAsync<AList>(sql, new { });
 
@@ -50,7 +50,7 @@ namespace ToDoList.Data.Repositories
             var db = dbConnection();
 
             var sql = @"
-                        SELECT id, title, description, duedate, completion_date, status, created_by  
+                        SELECT id, title, description, duedate, completion_date, status, created_by
                         FROM list 
                         WHERE id = @Id";
 
@@ -63,10 +63,10 @@ namespace ToDoList.Data.Repositories
 
             var sql = @"
                         INSERT INTO list (title, description, duedate, completion_date, status, created_by)
-                        VALUES (@title, @description, @duedate, @completion_date, @status, @created_by )
+                        VALUES (@title, @description, @duedate, @completion_date, @status, @created_by)
                         ";
 
-            var result = await db.ExecuteAsync(sql, new { list.Title, list.Description, list.DueDate, list.Completion_Date, list.Status, list. Created_By });
+            var result = await db.ExecuteAsync(sql, new { list.Title, list.Description, list.DueDate, list.Completion_Date, list.Status, list.Created_By});
 
             return result > 0;
         }

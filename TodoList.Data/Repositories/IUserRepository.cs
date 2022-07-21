@@ -9,7 +9,7 @@ namespace ToDoList.Data.Repositories
 {
     public interface IUserRepository
     {
-        Task<bool> CreateUser(User user);
-        Task<User> LoguinUser(string username, string password);
+        Task<bool> RegisterUser(User user);
+        Task<bool> LoguinUser(User user);
     }
 }

@@ -18,20 +18,20 @@ namespace ToDoList.Controllers
             _listRepository = listRepository;
         }
 
-        [HttpGet]
+        [HttpGet("GetAll")]
         public async Task<IActionResult> GetAllItems()
         {
             return Ok(await _listRepository.GetAllItems());
         }
 
 
-        [HttpGet("{id}")]
+        [HttpGet("GetItem")]
         public async Task<IActionResult> GetItemsDetails(int id)
         {
             return Ok(await _listRepository.GetItemDetails(id));
         }
 
-        [HttpPost]
+        [HttpPost("Create")]
         public async Task<IActionResult> InsertItem([FromBody] AList list)
         {
             if (list == null)
@@ -46,7 +46,7 @@ namespace ToDoList.Controllers
         }
 
 
-        [HttpPut]
+        [HttpPut("Update")]
         public async Task<IActionResult> UpdateItem([FromBody] AList list)
         {
             if (list == null)
@@ -61,7 +61,7 @@ namespace ToDoList.Controllers
         }
 
 
-        [HttpDelete("{id}")]
+        [HttpDelete("Delete")]
         public async Task<IActionResult> DeleteItem(int id)
         {
 
