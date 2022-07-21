@@ -10,7 +10,6 @@ using System.Text;
 using ToDoList.Data;
 using ToDoList.Data.Repositories;
 
-
 namespace ToDoList
 {
     public class Startup
@@ -22,7 +21,6 @@ namespace ToDoList
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             var secretkey = Configuration.GetSection("Settings").GetSection("Secretkey").ToString();
@@ -60,7 +58,6 @@ namespace ToDoList
 
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

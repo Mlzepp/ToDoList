@@ -43,12 +43,12 @@ namespace ToDoList.Controllers
             }
             else
             {
-                return BadRequest("Usuario ya registrado");
+                return BadRequest("User already registered");
             }
         }
 
-        [HttpPost("loguin")]
-        public async Task<IActionResult> LoguinUser([FromBody] User request)
+        [HttpPost("login")]
+        public async Task<IActionResult> LoginUser([FromBody] User request)
         {
             if (request == null)
                 return BadRequest();
@@ -56,7 +56,7 @@ namespace ToDoList.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
            
-            var result = await _userRepository.LoguinUser(request);
+            var result = await _userRepository.LoginUser(request);
             
             if (result == true)
             {

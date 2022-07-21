@@ -3,7 +3,6 @@ using Npgsql;
 using System.Threading.Tasks;
 using ToDoList.Model;
 
-
 namespace ToDoList.Data.Repositories
 {
     public class UserRepository : IUserRepository   
@@ -35,7 +34,7 @@ namespace ToDoList.Data.Repositories
             }
         }
 
-        public async Task<bool> LoguinUser(User user)
+        public async Task<bool> LoginUser(User user)
         {
             var db = dbConnection();
 

@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace ToDoList.Model
 {
     public class User
     {
+        [Required]
         public string Username { get; set; }
+        [Required]
         public string Password { get; set; }    
         public DateTime Created { get; set; }
     }
