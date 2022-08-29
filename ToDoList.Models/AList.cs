@@ -14,6 +14,8 @@ namespace ToDoList.Model
         public DateTime Completion_Date { get; set; }
         public string Status { get; set; }
         public string Created_By { get; set; }
+        public string User { get; set; }
+        public bool SentMail { get; set; }
 
     }
 }

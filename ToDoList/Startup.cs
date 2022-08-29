@@ -48,7 +48,9 @@ namespace ToDoList
 
             services.AddScoped<IListRepository, ListRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
-
+            services.AddTransient<IEmailRepository, EmailRepository>();
+            services.AddHostedService<Controllers.EmailController>();
+            
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

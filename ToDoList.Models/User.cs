@@ -10,5 +10,6 @@ namespace ToDoList.Model
         [Required]
         public string Password { get; set; }    
         public DateTime Created { get; set; }
+        public string Email { get; set; }
     }
 }
