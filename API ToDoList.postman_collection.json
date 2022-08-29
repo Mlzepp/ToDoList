@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "9a87040e-a1bf-45af-b0c1-1675902b68a3",
+		"name": "API ToDoList",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21633732"
+	},
+	"item": [
+		{
+			"name": "CreateItem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhZG1pbiIsIm5iZiI6MTY1ODQzMDA5NiwiZXhwIjoxNjU4NDU4ODk2LCJpYXQiOjE2NTg0MzAwOTZ9.6MDvSEkA7u3l4Fhe6aARiBg4vrpq65SgJcUjww2d0DY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Auth0\",\r\n  \"description\": \"Create Auth0 autentication\",\r\n  \"dueDate\": \"2022-07-21T19:05:11.874Z\",\r\n  \"completion_Date\": \"2022-07-21T19:05:11.874Z\",\r\n  \"status\": \"todo\",\r\n  \"created_By\": \"Matias Losada\",\r\n  \"user\": \"admin\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44389/api/List/Create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44389",
+					"path": [
+						"api",
+						"List",
+						"Create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReadItems",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "ReadItemDetails",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateItem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhZG1pbiIsIm5iZiI6MTY1ODQzMTc3NiwiZXhwIjoxNjU4NDYwNTc2LCJpYXQiOjE2NTg0MzE3NzZ9.QiRHebI5ikNMnQpK_9YK2hEXSwulppRawWwsAB0UBDQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 15,\r\n  \"title\": \"Prueba\",\r\n  \"description\": \"Prueba Postman\",\r\n  \"dueDate\": \"2022-07-21T19:05:11.874Z\",\r\n  \"completion_Date\": \"2022-07-21T19:05:11.874Z\",\r\n  \"status\": \"done\",\r\n  \"created_By\": \"Matias Losada\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44389/api/List/Update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44389",
+					"path": [
+						"api",
+						"List",
+						"Update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteItem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJtYXRpYXMubG9zYWRhQGxpdmUuY29tIiwibmJmIjoxNjU4MTc0OTc3LCJleHAiOjE2NTgxNzUyNzcsImlhdCI6MTY1ODE3NDk3N30.6viR4AJ11RaLR5CRRUS8FqrgRi9hBigXgIoYtNoi4Tw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44389/api/List/Delete/11",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44389",
+					"path": [
+						"api",
+						"List",
+						"Delete",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Loguin",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"mlzepp\",\r\n  \"password\": \"matias1\",\r\n  \"created\": \"2022-07-21T19:18:41.374Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44389/api/User/register",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44389",
+					"path": [
+						"api",
+						"User",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "https://localhost:44389/api",
+			"type": "string"
+		}
+	]
+}
