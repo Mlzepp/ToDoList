@@ -26,7 +26,7 @@ namespace ToDoList.Controllers
 
 
         [HttpGet("GetItem")]
-        public async Task<IActionResult> GetItemsDetails(int id)
+        public async Task<IActionResult> GetItemDetails(int id)
         {
             return Ok(await _listRepository.GetItemDetails(id));
         }
