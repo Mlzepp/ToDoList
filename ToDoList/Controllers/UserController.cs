@@ -28,7 +28,7 @@ namespace ToDoList.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> RegisterUser([FromBody] User user)
         {
-            if (user == null)
+            if (user.Username == null)
                 return BadRequest();
 
             if (!ModelState.IsValid)
@@ -36,20 +36,20 @@ namespace ToDoList.Controllers
 
             var created = await _userRepository.RegisterUser(user);
 
-            if (created == true)
-            { 
-                return Created("created", created);
-            }
-            else
-            {
-                return BadRequest("User already registered");
-            }
+            //if (created == true)
+            //{ 
+                  return Created("created", created);
+            //}
+            //else
+            //{
+            //    return BadRequest("User already registered");
+            //}
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> LoginUser([FromBody] User request)
         {
-            if (request == null)
+            if (request.Username == null)
                 return BadRequest();
 
             if (!ModelState.IsValid)
@@ -57,16 +57,16 @@ namespace ToDoList.Controllers
            
             var result = await _userRepository.LoginUser(request);
             
-            if (result == true)
-            {
+            //if (result == true)
+            //{
                 string token = CreateToken(request);
 
                 return Ok(token);
-            }
-            else
-            {
-                return BadRequest("Wrong password.");
-            }
+            //}
+            //else
+            //{
+            //    return BadRequest("Wrong password.");
+            //}
         }
 
         private string CreateToken(User user)
